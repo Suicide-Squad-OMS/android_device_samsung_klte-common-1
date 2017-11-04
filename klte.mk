@@ -63,7 +63,9 @@ PRODUCT_COPY_FILES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.msm8974
+    android.hardware.gnss@1.0-impl-qti \
+    android.hardware.gnss@1.0-service-qti \
+    libgnss
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/clatd.conf:system/etc/clatd.conf \
@@ -78,10 +80,18 @@ PRODUCT_PACKAGES += \
     libxml2 \
     Snap
 
+# Doze
+#PRODUCT_PACKAGES += \
+#    SamsungDoze
+
 # Fingerprint
 PRODUCT_PACKAGES += \
-    fingerprintd \
+    android.hardware.biometrics.fingerprint@2.0-service \
     fingerprint.msm8974
+
+# FlipFlap
+PRODUCT_PACKAGES += \
+    FlipFlap
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
